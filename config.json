@@ -1,0 +1,12 @@
+{
+	"users": [
+		{
+			"name" : "firstname-middlename-lastname",
+			"age": 18,
+			"state": "state as per Cowin portal",
+			"district": "district as per Cowin portal",
+			"chat_id": 1234567898
+		}
+	],
+	"bot_token": "telegram_bot_token"
+}
