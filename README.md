@@ -36,3 +36,6 @@ the `state` as per the listing in Cowin portal, the `district` as per the Cowin 
 obtained by calling the `getUpdates` endpoint of the Telegram API.
 
 ## Configuring the Telegram bot token
+In order to obtain the telegram bot access token, one has to initiate a conversation with `@BotFather` on Telegram and issue the command `/newbot`. On doing so
+and following the responses from `BotFather`, the telegram bot will be created. This access token needs to be provided in the configuration file for the
+`bot_token` key.
