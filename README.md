@@ -14,6 +14,8 @@ Steps:
 5. Run the program
 
 ## Configuration file details
+The configuration file (config.json) present in the repository is read by the program in order to send the updates to the users.
+A sample configuration is already present in the file and looks as follows:
 ```
 {
 	"users": [
@@ -28,3 +30,5 @@ Steps:
 	"bot_token": "telegram_bot_token"
 }
 ```
+
+Any number of users can be added under the `users` key. Each should contain the `name` of the user
