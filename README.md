@@ -39,3 +39,10 @@ obtained by calling the `getUpdates` endpoint of the Telegram API.
 In order to obtain the telegram bot access token, one has to initiate a conversation with `@BotFather` on Telegram and issue the command `/newbot`. On doing so
 and following the responses from `BotFather`, the telegram bot will be created. This access token needs to be provided in the configuration file for the
 `bot_token` key.
+
+## Running the program
+In order to run the program in normal mode, just execute the file : `mon.py`. In order to debug the program run, execute the file with debug option : `mon.py -d` or
+`mon.py --debug`. This will ensure debugging is enabled and the same can be seen in the log files.
+
+_Note_: In the normal mode, the program logs INFO logs only; in DEBUG mode, the logging is extensive and uses a lot of space in HDD. If you are planning to set it
+up on a server, please refrain from executing the program in DEBUG mode.
