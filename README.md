@@ -31,4 +31,8 @@ A sample configuration is already present in the file and looks as follows:
 }
 ```
 
-Any number of users can be added under the `users` key. Each should contain the `name` of the user
+Any number of users can be added under the `users` key. Each should contain the `name` of the user, the preferred `age` group or the age of the user itself,
+the `state` as per the listing in Cowin portal, the `district` as per the Cowin portal and then the `chat_id` of the person with the Telegram bot. This can be
+obtained by calling the `getUpdates` endpoint of the Telegram API.
+
+## Configuring the Telegram bot token
