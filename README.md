@@ -24,6 +24,7 @@ A sample configuration is already present in the file and looks as follows:
 			"age": 18,
 			"state": "state as per Cowin portal",
 			"district": "district as per Cowin portal",
+			"enabled": true,
 			"chat_id": 1234567898
 		}
 	],
@@ -34,6 +35,8 @@ A sample configuration is already present in the file and looks as follows:
 Any number of users can be added under the `users` key. Each should contain the `name` of the user, the preferred `age` group or the age of the user itself,
 the `state` as per the listing in Cowin portal, the `district` as per the Cowin portal and then the `chat_id` of the person with the Telegram bot. This can be
 obtained by calling the `getUpdates` endpoint of the Telegram API.
+
+`enabled` field, if set to true will allow for sending updates to the users, false will not allow for sending the messages to the users.
 
 ## Configuring the Telegram bot token
 In order to obtain the telegram bot access token, one has to initiate a conversation with `@BotFather` on Telegram and issue the command `/newbot`. On doing so
