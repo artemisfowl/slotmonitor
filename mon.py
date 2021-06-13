@@ -71,28 +71,29 @@ def process(confdata: str, scode_storage: dict, dates: list):
 	info("Starting to fetch the information and send the message")
 	debug(f"Bot token : {confdata.bot_token}")
 	for user in confdata.users:
-		debug(f"Name : {user.name}")
-		debug(f"Desired Age Group : {user.age}")
-		debug(f"Residing State : {user.state}")
-		debug(f"Residing District : {user.district}")
-		debug(f"Chat ID : {user.chat_id}")
-		info(f"Getting residing state code for user : {user.name}")
-		residing_state_code = utl_get_state_code(state_name=user.state,
-				storage=scode_storage)
-		debug(f"Residing state code : {residing_state_code}")
-		residing_district_code = utl_get_dist_code(
-				district_name=user.district,
-				storage=utl_pop_dcode(district_code=residing_state_code))
-		debug(f"Residing district code : {residing_district_code}")
+		if user.enabled:
+			debug(f"Name : {user.name}")
+			debug(f"Desired Age Group : {user.age}")
+			debug(f"Residing State : {user.state}")
+			debug(f"Residing District : {user.district}")
+			debug(f"Chat ID : {user.chat_id}")
+			info(f"Getting residing state code for user : {user.name}")
+			residing_state_code = utl_get_state_code(state_name=user.state,
+					storage=scode_storage)
+			debug(f"Residing state code : {residing_state_code}")
+			residing_district_code = utl_get_dist_code(
+					district_name=user.district,
+					storage=utl_pop_dcode(district_code=residing_state_code))
+			debug(f"Residing district code : {residing_district_code}")
 
-		for date in dates:
-			d = utl_get_availabilty_data(district_id=residing_district_code,
-					date=date)
-			info("About to parse the received availablility data")
-			debug(f"Availability data serialized : {d}")
-			utl_parse_availability_data(data=d, date=date, age=user.age,
-					user_name=user.name, chat_id=user.chat_id,
-					bot_token=confdata.bot_token)
+			for date in dates:
+				d = utl_get_availabilty_data(district_id=residing_district_code,
+						date=date)
+				info("About to parse the received availablility data")
+				debug(f"Availability data serialized : {d}")
+				utl_parse_availability_data(data=d, date=date, age=user.age,
+						user_name=user.name, chat_id=user.chat_id,
+						bot_token=confdata.bot_token)
 
 if __name__ == '__main__':
 	main()

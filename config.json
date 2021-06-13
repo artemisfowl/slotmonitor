@@ -5,6 +5,7 @@
 			"age": 18,
 			"state": "state as per Cowin portal",
 			"district": "district as per Cowin portal",
+			"enabled": true,
 			"chat_id": 1234567898
 		}
 	],
