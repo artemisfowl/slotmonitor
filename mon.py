@@ -94,7 +94,6 @@ def process(confdata: str, scode_storage: dict, dates: list):
 				utl_parse_availability_data(data=d, date=date, age=user.age,
 						user_name=user.name, chat_id=user.chat_id,
 						bot_token=confdata.bot_token)
-			# checking something
 
 if __name__ == '__main__':
 	main()
